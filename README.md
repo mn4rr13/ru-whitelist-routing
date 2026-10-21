@@ -20,6 +20,6 @@ inline; re-paste when the lists change.
 ## Auto-update on the VPS
 
 `scripts/vps-update.py` is installed as `/usr/local/bin/update-subjson-rules.py`
-with a daily cron (04:10). It downloads `dist/xray-rules.json`, writes it into the
+with a weekly cron (Mondays 04:10). It downloads `dist/xray-rules.json`, writes it into the
 `subJsonRules` setting of `/etc/x-ui/x-ui.db` (backup first, last 5 kept) and
 restarts `x-ui` only when the rules changed.
