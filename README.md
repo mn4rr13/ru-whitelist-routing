@@ -16,3 +16,10 @@ Sources: [ancored/ru-mobile-whitelist](https://github.com/ancored/ru-mobile-whit
 
 3x-ui limits a remote URL to 16 KiB, so these files (~30 KiB) must be pasted
 inline; re-paste when the lists change.
+
+## Auto-update on the VPS
+
+`scripts/vps-update.py` is installed as `/usr/local/bin/update-subjson-rules.py`
+with a daily cron (04:10). It downloads `dist/xray-rules.json`, writes it into the
+`subJsonRules` setting of `/etc/x-ui/x-ui.db` (backup first, last 5 kept) and
+restarts `x-ui` only when the rules changed.
